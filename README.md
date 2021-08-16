@@ -1,15 +1,15 @@
-Ruby gem: Gig
+# Ruby gem: Gig
 
-Description:
+## Description:
 
 A gem with a command line interface that will save repository owner images based on a repository search using GitHub's Search API.
 
-Specs:
+## Specs:
 
 - Ruby version: 2.7.3
 - RSpec version: 3.10.0
 
-Usage:
+## Usage:
 
 - Run `gem build gig.gemspec` to build the gem
 - Run `gem install ./gig-0.0.0.gem` to install the gem
