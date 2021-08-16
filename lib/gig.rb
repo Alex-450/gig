@@ -3,7 +3,6 @@ require 'open-uri'
 
 class Gig
   def initialize(options)
-    puts 'please enter at least one query term' unless options != 'none'
     @query = options.join('+')
     @images_directory = options.join('-')
     @url = "https://api.github.com/search/repositories?q=#{@query}&per_page=100"
