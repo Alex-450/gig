@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+require 'gig'
+
+query = if ARGV.length.positive?
+          ARGV
+        else
+          'none'
+        end
+
+if query == 'none'
+  puts 'Please enter at least one search topic'
+else
+  g = Gig.new(query)
+  if g.check_rate_limit == false
+    puts 'You appear to be offline, please check your connection. Exiting programme.'
+    return
+  end
+  while g.check_rate_limit.zero?
+    puts 'GitHub Search API rate limit reached, programme pausing for 60 seconds before retrying.'
+    sleep(60)
+  end
+  g.query_api
+  g.save_images
+end
